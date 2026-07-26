@@ -32,7 +32,7 @@
 
 - **Owner:** [@rajfflive](https://t.me/rajfflive)  
 - **Telegram Channel:** [Join our community](https://t.me/+_IL16SZ7apBiZWI1)  
-- **Bot:** [@rtmxbot](https://t.me/rtmxbot)
+- **Bot:** [@rtmxbot](https://t.me/BOTHOSTINGBOT)
 
 > *This bot is developed and maintained by **Rajfflive**. All rights reserved.*
 
