@@ -879,10 +879,12 @@ def nano_cmd(m):
         "filename": filename
     }
     
-    BASE_URL = f"https://{os.environ.get('RENDER_EXTERNAL_HOSTNAME', os.environ.get('REPLIT_DEV_DOMAIN', f'localhost:{PORT}'))}"
+    BASE_URL = f"https://{os.environ.get('RAILWAY_PUBLIC_DOMAIN', os.environ.get('RENDER_EXTERNAL_HOSTNAME', os.environ.get('REPLIT_DEV_DOMAIN', f'localhost:{PORT}')))}"
     link = f"{BASE_URL}/edit/{sid}"
     
-    bot.send_message(cid, f"📝 Edit file: `{filename}`\n✏️ [Click here]({link})", parse_mode="Markdown")
+    markup = types.InlineKeyboardMarkup()
+    markup.add(types.InlineKeyboardButton("✏️ Edit File", url=link))
+    bot.send_message(cid, f"📝 Edit file: `{filename}`", parse_mode="Markdown", reply_markup=markup)
 
 @bot.message_handler(content_types=['document'])
 def handle_document(m):
@@ -1092,8 +1094,10 @@ def callback_handler(call):
         elif call.data == "performance":
             show_performance(cid)
         elif call.data == "public_url":
-            url = f"https://{os.environ.get('REPLIT_DEV_DOMAIN', 'localhost')}"
-            bot.send_message(cid, f"🌐 Public URL: {url}")
+            url = f"https://{os.environ.get('RAILWAY_PUBLIC_DOMAIN', os.environ.get('RENDER_EXTERNAL_HOSTNAME', os.environ.get('REPLIT_DEV_DOMAIN', 'localhost')))}"
+            markup = types.InlineKeyboardMarkup()
+            markup.add(types.InlineKeyboardButton("🌐 Open URL", url=url))
+            bot.send_message(cid, f"🌐 Public URL: `{url}`", parse_mode="Markdown", reply_markup=markup)
         elif call.data == "zip_guide":
             bot.send_message(cid, "📤 Send a .zip file directly (max 10MB)")
         
