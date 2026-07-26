@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.env
+bot_data.json
+user_data/
+logs/
+*.log
+*.zip
+*.db
