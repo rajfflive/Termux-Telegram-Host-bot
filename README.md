@@ -11,7 +11,7 @@
 
 ## 📌 **Live Bot**
 
-👉 [**@rtmxbot**](https://t.me/rtmxbot) – Start the bot and explore the features!
+👉 [**@BOTHOSTINGBOT**](https://t.me/BOTHOSTINGBOT) – Start the bot and explore the features!
 
 ---
 
